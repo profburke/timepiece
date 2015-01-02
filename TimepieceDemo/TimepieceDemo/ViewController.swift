@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITextFieldDelegate
   lazy var datePicker : UIDatePicker = UIDatePicker()
   var mode : Timepiece.Mode?
   var baseline : NSDate?
-  
+  var timepiece = Timepiece()
   
 
   
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate
   {
     super.viewDidAppear(animated)
     actualTimeLabel.text = NSDate().description
-    warpedTimeLabel.text = Timepiece.now().description
+    warpedTimeLabel.text = timepiece.now().description
     ticker = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "update", userInfo: nil, repeats: true)
   }
   
@@ -83,8 +83,8 @@ class ViewController: UIViewController, UITextFieldDelegate
   
   func setMode()
   {
-    Timepiece.resume()
-    Timepiece.unfreeze()
+    timepiece.resume()
+    timepiece.unfreeze()
 
     mode = Timepiece.Mode(rawValue: modeController.selectedSegmentIndex)
     if let m = mode {
@@ -93,11 +93,11 @@ class ViewController: UIViewController, UITextFieldDelegate
         break
       case .Frozen:
         if let b = baseline {
-          Timepiece.freeze(at: b)
+          timepiece.freeze(at: b)
         }
       case .Traveled:
         if let b = baseline {
-          Timepiece.travel(to: b)
+          timepiece.travel(to: b)
         }
       }
     }
@@ -121,7 +121,7 @@ class ViewController: UIViewController, UITextFieldDelegate
   func update()
   {
     actualTimeLabel.text = NSDate().description
-    warpedTimeLabel.text = Timepiece.now().description
+    warpedTimeLabel.text = timepiece.now().description
   }
   
   
