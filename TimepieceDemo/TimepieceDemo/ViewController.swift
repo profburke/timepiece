@@ -14,21 +14,28 @@ import Timepiece
 
 class ViewController: UIViewController, UITextFieldDelegate
 {
+  // MARK:- Properties
+  
+  
   @IBOutlet weak var actualTimeLabel: UILabel!
   @IBOutlet weak var warpedTimeLabel: UILabel!
   @IBOutlet weak var baselineTextField: UITextField!
   @IBOutlet weak var modeController: UISegmentedControl!
-  var ticker : NSTimer?
-  var baseline : NSDate?
-  var datePicker : UIDatePicker = UIDatePicker()
+  lazy var ticker : NSTimer = NSTimer()
+  lazy var datePicker : UIDatePicker = UIDatePicker()
   var mode : Timepiece.Mode?
+  var baseline : NSDate?
   
   
 
   
+  // MARK:- View Lifecycle
+  
+  
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
     baselineTextField.delegate = self
     
     let viewWidth = self.view.frame.width
@@ -64,18 +71,22 @@ class ViewController: UIViewController, UITextFieldDelegate
   
   override func viewDidDisappear(animated: Bool)
   {
-    ticker?.invalidate()
+    ticker.invalidate()
     super.viewDidDisappear(animated)
   }
   
   
   
   
+  // MARK:- Handler Methods
+  
+  
   func setMode()
   {
-    mode = Timepiece.Mode(rawValue: modeController.selectedSegmentIndex)
     Timepiece.resume()
     Timepiece.unfreeze()
+
+    mode = Timepiece.Mode(rawValue: modeController.selectedSegmentIndex)
     if let m = mode {
       switch (m) {
       case .Normal:
