@@ -13,8 +13,8 @@
 		C9FA89631A570B100015DB03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9FA89621A570B100015DB03 /* Images.xcassets */; };
 		C9FA89661A570B100015DB03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FA89641A570B100015DB03 /* LaunchScreen.xib */; };
 		C9FA89721A570B100015DB03 /* TimepieceDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA89711A570B100015DB03 /* TimepieceDemoTests.swift */; };
-		C9FA89871A5714810015DB03 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FA89861A5714810015DB03 /* Timepiece.framework */; };
-		C9FA89891A5714C50015DB03 /* Timepiece.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9FA89861A5714810015DB03 /* Timepiece.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9FA89AE1A5738000015DB03 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FA89AA1A5737730015DB03 /* Timepiece.framework */; };
+		C9FA89AF1A5738000015DB03 /* Timepiece.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9FA89AA1A5737730015DB03 /* Timepiece.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,17 +25,39 @@
 			remoteGlobalIDString = C9FA89551A570B100015DB03;
 			remoteInfo = TimepieceDemo;
 		};
+		C9FA89A91A5737730015DB03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FA89A41A5737720015DB03 /* Timepiece.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C9FA892F1A5709D10015DB03;
+			remoteInfo = Timepiece;
+		};
+		C9FA89AB1A5737730015DB03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FA89A41A5737720015DB03 /* Timepiece.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C9FA893A1A5709D10015DB03;
+			remoteInfo = TimepieceTests;
+		};
+		C9FA89B01A5738000015DB03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9FA89A41A5737720015DB03 /* Timepiece.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C9FA892E1A5709D10015DB03;
+			remoteInfo = Timepiece;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C9FA89881A5714AB0015DB03 /* CopyFiles */ = {
+		C9FA89B21A5738000015DB03 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C9FA89891A5714C50015DB03 /* Timepiece.framework in CopyFiles */,
+				C9FA89AF1A5738000015DB03 /* Timepiece.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -51,7 +73,7 @@
 		C9FA896B1A570B100015DB03 /* TimepieceDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimepieceDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FA89701A570B100015DB03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9FA89711A570B100015DB03 /* TimepieceDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimepieceDemoTests.swift; sourceTree = "<group>"; };
-		C9FA89861A5714810015DB03 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Timepiece-eouayyoqlxkfswgahzolfccbkhxj/Build/Products/Debug-iphoneos/Timepiece.framework"; sourceTree = "<group>"; };
+		C9FA89A41A5737720015DB03 /* Timepiece.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Timepiece.xcodeproj; path = ../Timepiece/Timepiece.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9FA89871A5714810015DB03 /* Timepiece.framework in Frameworks */,
+				C9FA89AE1A5738000015DB03 /* Timepiece.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +98,7 @@
 		C9FA894D1A570B100015DB03 = {
 			isa = PBXGroup;
 			children = (
+				C9FA89A41A5737720015DB03 /* Timepiece.xcodeproj */,
 				C9FA89581A570B100015DB03 /* TimepieceDemo */,
 				C9FA896E1A570B100015DB03 /* TimepieceDemoTests */,
 				C9FA89851A5712410015DB03 /* Frameworks */,
@@ -133,9 +156,17 @@
 		C9FA89851A5712410015DB03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C9FA89861A5714810015DB03 /* Timepiece.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9FA89A51A5737720015DB03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9FA89AA1A5737730015DB03 /* Timepiece.framework */,
+				C9FA89AC1A5737730015DB03 /* TimepieceTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,14 +176,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9FA89751A570B100015DB03 /* Build configuration list for PBXNativeTarget "TimepieceDemo" */;
 			buildPhases = (
-				C9FA89881A5714AB0015DB03 /* CopyFiles */,
 				C9FA89521A570B100015DB03 /* Sources */,
 				C9FA89531A570B100015DB03 /* Frameworks */,
 				C9FA89541A570B100015DB03 /* Resources */,
+				C9FA89B21A5738000015DB03 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C9FA89B11A5738000015DB03 /* PBXTargetDependency */,
 			);
 			name = TimepieceDemo;
 			productName = TimepieceDemo;
@@ -206,6 +238,12 @@
 			mainGroup = C9FA894D1A570B100015DB03;
 			productRefGroup = C9FA89571A570B100015DB03 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C9FA89A51A5737720015DB03 /* Products */;
+					ProjectRef = C9FA89A41A5737720015DB03 /* Timepiece.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C9FA89551A570B100015DB03 /* TimepieceDemo */,
@@ -213,6 +251,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C9FA89AA1A5737730015DB03 /* Timepiece.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Timepiece.framework;
+			remoteRef = C9FA89A91A5737730015DB03 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C9FA89AC1A5737730015DB03 /* TimepieceTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TimepieceTests.xctest;
+			remoteRef = C9FA89AB1A5737730015DB03 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C9FA89541A570B100015DB03 /* Resources */ = {
@@ -259,6 +314,11 @@
 			isa = PBXTargetDependency;
 			target = C9FA89551A570B100015DB03 /* TimepieceDemo */;
 			targetProxy = C9FA896C1A570B100015DB03 /* PBXContainerItemProxy */;
+		};
+		C9FA89B11A5738000015DB03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Timepiece;
+			targetProxy = C9FA89B01A5738000015DB03 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -363,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/matt/Matt/Xcode/Timepiece/Timepiece/build/Debug-iphoneos",
@@ -379,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/matt/Matt/Xcode/Timepiece/Timepiece/build/Debug-iphoneos",
