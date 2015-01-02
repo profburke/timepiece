@@ -17,9 +17,6 @@ import Foundation
 // NOTE: we could implement all the functionality in terms of assigning an appropriate function to optionalNowFunction,
 // but I think it might be easier to do it this way...
 
-// TODO: implement scale
-// TODO: do we want scale to be nonzero real with fractions slowing time down?
-// TODO: guard scale against being <= 0?
 // TODO: need to handle Significant time notifications...
 
 
@@ -27,23 +24,59 @@ import Foundation
 // (can possibly accomplish this with optionalNowFunction)
 
 // TODO: have a stack of time adjustments, call Timepiece functions w/blocks (closures) a la Timecop
+// NOTE: does implementing TP as a class give us essentially that? (each block can create its own timepiece?)
 
 
 
-public struct Timepiece
+public class Timepiece
 {
-  private static var frozen : NSDate?
-  private static var difference : NSTimeInterval?
-  public static var scale = 1
-  public static var optionalNowFunction: (() -> NSDate)?
-  
-  
   public enum Mode: Int
   {
     case Normal = 0
     case Frozen
     case Traveled
   }
+  
+  private var frozen: NSDate?
+  private var scaleBase: NSDate?
+  private var difference: NSTimeInterval = 0
+
+  public var optionalNowFunction: (() -> NSDate)?
+  public var scale: Int = 1 { // TODO: guard against invalid values, use fractional values to slow down time?
+    didSet {
+      if scale == 1 {
+        scaleBase = nil
+      } else {
+        scaleBase = now()
+      }
+    }
+  }
+  
+  
+  
+  
+  public init()
+  {
+    // need to create a timer (on a separate thread?) that
+    // checks every second for a significant time event (using our warped time)
+    // and, if so, posts a notification
+  }
+  
+  
+  
+  
+  deinit
+  {
+    // need to stop the thread
+    // now maybe need a start and stop method separate from init/deinit
+    // and call them from init/deinit?
+    // (that way we can also call when we go to/come from background?)
+    // except---now do we need a global list of timepieces so we can easily start/stop them all?
+    // check if there's a notification we can register for?
+  }
+  
+  
+  
   
   /*
   
@@ -57,31 +90,39 @@ public struct Timepiece
   
   
   
-  public static func now() -> NSDate
+  public func now() -> NSDate
   {
-    // return result from custom time generator
+    // if custom time generator exists, use it
     if let nowFunction = optionalNowFunction {
       let result = nowFunction()
       return result
       
-      // see if we're frozen
+    // see if we're frozen
     } else if let result = frozen {
       return result
       
-      // see if we've traveled
-    } else if let delta = difference {
-      return NSDate(timeIntervalSinceNow: delta) // TODO: factor in scale
-      
-      // else we're not mucking with time
+    // else we're not mucking with time except, perhapse, scale
     } else {
-      return NSDate() // TODO: factor in scale
+      var delta: NSTimeInterval = 0
+      if let base = scaleBase {
+        delta = NSDate().timeIntervalSinceDate(base) * Double(scale)
+      }
+      return NSDate(timeIntervalSinceNow: difference + delta) // TODO: factor in scale
     }
   }
   
   
   
   
-  public static func freeze(at time : NSDate = Timepiece.now())
+  public func freeze()
+  {
+    frozen = self.now()
+  }
+  
+  
+  
+  
+  public func freeze(at time: NSDate)
   {
     frozen = time
   }
@@ -89,7 +130,7 @@ public struct Timepiece
   
   
   
-  public static func unfreeze()
+  public func unfreeze()
   {
     frozen = nil
   }
@@ -97,7 +138,7 @@ public struct Timepiece
   
   
   
-  public static func travel(timeInterval : NSTimeInterval)
+  public func travel(timeInterval: NSTimeInterval)
   {
     difference = timeInterval
   }
@@ -105,7 +146,7 @@ public struct Timepiece
   
   
   
-  public static func travel(to time : NSDate)
+  public func travel(to time: NSDate)
   {
     difference = time.timeIntervalSinceDate(NSDate())
   }
@@ -113,9 +154,9 @@ public struct Timepiece
   
   
   
-  public static func resume()
+  public func resume()
   {
-    difference = nil
+    difference = 0
   }
   
   
