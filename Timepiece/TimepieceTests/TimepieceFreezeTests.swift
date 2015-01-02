@@ -20,11 +20,11 @@ class TimepieceFreezeTests: TimepieceTestCase
   
   func testTimeProgressesAfterUnfreeze()
   {
-    Timepiece.unfreeze()
+    timepiece.unfreeze()
     
-    let t1 = Timepiece.now()
+    let t1 = timepiece.now()
     sleep(2)
-    let t2 = Timepiece.now()
+    let t2 = timepiece.now()
     
     XCTAssert(t1.compare(t2) == .OrderedAscending, "T2 \(t2) should be later than T1 \(t1)")
   }
@@ -34,12 +34,12 @@ class TimepieceFreezeTests: TimepieceTestCase
   
   func core(time: NSDate)
   {
-    let now1 = Timepiece.now()
+    let now1 = timepiece.now()
     XCTAssert(now1.compare(time) == .OrderedSame, "Now (\(now1) should equal \(time)")
     
     sleep(2)
     
-    let now2 = Timepiece.now()
+    let now2 = timepiece.now()
     XCTAssert(now2.compare(time) == .OrderedSame, "After a few seconds, now (\(now2) should _still_ equal \(time)")
     
     XCTAssert(now1.isEqualToDate(now2), "now1 should equal now2")
@@ -50,7 +50,7 @@ class TimepieceFreezeTests: TimepieceTestCase
   
   func testFreezeInThePast()
   {
-    Timepiece.freeze(at:waypast)
+    timepiece.freeze(at:waypast)
     core(waypast)
   }
   
@@ -59,7 +59,7 @@ class TimepieceFreezeTests: TimepieceTestCase
   
   func testFreezeInTheFuture()
   {
-    Timepiece.freeze(at: anHourFromNow)
+    timepiece.freeze(at: anHourFromNow)
     core(anHourFromNow)
   }
   
@@ -68,8 +68,8 @@ class TimepieceFreezeTests: TimepieceTestCase
   
   func testScaleDoesNotAffectFreeze()
   {
-    Timepiece.scale = 23
-    Timepiece.freeze(at: waypast)
+    timepiece.scale = 23
+    timepiece.freeze(at: waypast)
     core(waypast)
   }
   
@@ -79,14 +79,14 @@ class TimepieceFreezeTests: TimepieceTestCase
   func testFreezeNow()
   {
     let now = NSDate()
-    Timepiece.freeze()
+    timepiece.freeze()
     
-    let now1 = Timepiece.now()
+    let now1 = timepiece.now()
     XCTAssert(now1.timeIntervalSinceDate(now) < 1, "Now (\(now1) should be within a second of \(now)")
     
     sleep(2)
     
-    let now2 = Timepiece.now()
+    let now2 = timepiece.now()
     XCTAssert(now2.timeIntervalSinceDate(now) < 1, "After a few seconds, now (\(now2) should _still_ be within a second \(now)")
     
     XCTAssert(now1.isEqualToDate(now2), "now1 should equal now2")

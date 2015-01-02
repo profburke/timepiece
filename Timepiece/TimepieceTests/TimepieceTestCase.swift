@@ -14,12 +14,5 @@ import Timepiece
 
 class TimepieceTestCase: XCTestCase
 {
-  override func setUp()
-  {
-    Timepiece.unfreeze()
-    Timepiece.resume()
-    Timepiece.scale = 1
-  }
-  
-  
+  var timepiece = Timepiece()
 }
