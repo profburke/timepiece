@@ -4,7 +4,4 @@
    <FileRef
       location = "group:TimepieceDemo/TimepieceDemo.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Timepiece/Timepiece.xcodeproj">
-   </FileRef>
 </Workspace>
