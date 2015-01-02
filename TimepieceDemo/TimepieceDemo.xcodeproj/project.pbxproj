@@ -13,6 +13,8 @@
 		C9FA89631A570B100015DB03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9FA89621A570B100015DB03 /* Images.xcassets */; };
 		C9FA89661A570B100015DB03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9FA89641A570B100015DB03 /* LaunchScreen.xib */; };
 		C9FA89721A570B100015DB03 /* TimepieceDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA89711A570B100015DB03 /* TimepieceDemoTests.swift */; };
+		C9FA89871A5714810015DB03 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FA89861A5714810015DB03 /* Timepiece.framework */; };
+		C9FA89891A5714C50015DB03 /* Timepiece.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9FA89861A5714810015DB03 /* Timepiece.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C9FA89881A5714AB0015DB03 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9FA89891A5714C50015DB03 /* Timepiece.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C9FA89561A570B100015DB03 /* TimepieceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimepieceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FA895A1A570B100015DB03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +51,7 @@
 		C9FA896B1A570B100015DB03 /* TimepieceDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimepieceDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FA89701A570B100015DB03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9FA89711A570B100015DB03 /* TimepieceDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimepieceDemoTests.swift; sourceTree = "<group>"; };
+		C9FA89861A5714810015DB03 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Timepiece-eouayyoqlxkfswgahzolfccbkhxj/Build/Products/Debug-iphoneos/Timepiece.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FA89871A5714810015DB03 /* Timepiece.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +78,7 @@
 			children = (
 				C9FA89581A570B100015DB03 /* TimepieceDemo */,
 				C9FA896E1A570B100015DB03 /* TimepieceDemoTests */,
+				C9FA89851A5712410015DB03 /* Frameworks */,
 				C9FA89571A570B100015DB03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +130,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C9FA89851A5712410015DB03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9FA89861A5714810015DB03 /* Timepiece.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,6 +145,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9FA89751A570B100015DB03 /* Build configuration list for PBXNativeTarget "TimepieceDemo" */;
 			buildPhases = (
+				C9FA89881A5714AB0015DB03 /* CopyFiles */,
 				C9FA89521A570B100015DB03 /* Sources */,
 				C9FA89531A570B100015DB03 /* Frameworks */,
 				C9FA89541A570B100015DB03 /* Resources */,
@@ -336,6 +363,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/matt/Matt/Xcode/Timepiece/Timepiece/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Timepiece-eouayyoqlxkfswgahzolfccbkhxj/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = TimepieceDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -347,6 +379,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/matt/Matt/Xcode/Timepiece/Timepiece/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Timepiece-eouayyoqlxkfswgahzolfccbkhxj/Build/Products/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = TimepieceDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
