@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TimekeeperDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Y0-Co-y73">
+                                <rect key="frame" x="16" y="52" width="568" height="20"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-BoldItalic" family="Iowan Old Style" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="actual time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJz-Zh-Y8n">
+                                <rect key="frame" x="16" y="80" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="warped time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-q5-suT">
+                                <rect key="frame" x="16" y="163" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="baseline" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4JP-Pf-e2X">
+                                <rect key="frame" x="16" y="235" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-9U-8Cq">
+                                <rect key="frame" x="218" y="294" width="176" height="29"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Freeze"/>
+                                    <segment title="Travel"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warped Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hd-yx-tY4">
+                                <rect key="frame" x="16" y="135" width="568" height="20"/>
+                                <fontDescription key="fontDescription" name="IowanOldStyle-BoldItalic" family="Iowan Old Style" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hRM-9U-8Cq" firstAttribute="top" secondItem="4JP-Pf-e2X" secondAttribute="bottom" constant="29" id="76Q-UI-2ks"/>
+                            <constraint firstItem="Zch-q5-suT" firstAttribute="top" secondItem="3hd-yx-tY4" secondAttribute="bottom" constant="8" id="AJh-MU-Wre"/>
+                            <constraint firstItem="4JP-Pf-e2X" firstAttribute="top" secondItem="Zch-q5-suT" secondAttribute="bottom" constant="51" id="Dah-R0-jBJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3hd-yx-tY4" secondAttribute="trailing" id="JPr-iI-eVf"/>
+                            <constraint firstItem="4JP-Pf-e2X" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Khe-Id-ZlJ"/>
+                            <constraint firstAttribute="centerX" secondItem="hRM-9U-8Cq" secondAttribute="centerX" constant="-5.5" id="KpH-Ti-x82"/>
+                            <constraint firstItem="3hd-yx-tY4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="L1L-zv-Qqm"/>
+                            <constraint firstItem="UJz-Zh-Y8n" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Q2F-1C-bAN"/>
+                            <constraint firstItem="4Y0-Co-y73" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="VJY-me-S3J"/>
+                            <constraint firstItem="4Y0-Co-y73" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Vdv-Vi-4Ui"/>
+                            <constraint firstItem="Zch-q5-suT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="fk0-cU-bqT"/>
+                            <constraint firstItem="UJz-Zh-Y8n" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="g3j-dw-pEB"/>
+                            <constraint firstItem="4JP-Pf-e2X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ixs-r0-DhZ"/>
+                            <constraint firstItem="4Y0-Co-y73" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="ltt-K3-mck"/>
+                            <constraint firstItem="UJz-Zh-Y8n" firstAttribute="top" secondItem="4Y0-Co-y73" secondAttribute="bottom" constant="8" id="rMn-P9-A4g"/>
+                            <constraint firstItem="3hd-yx-tY4" firstAttribute="top" secondItem="UJz-Zh-Y8n" secondAttribute="bottom" constant="34" id="v2W-hi-DKY"/>
+                            <constraint firstItem="Zch-q5-suT" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="xJA-tG-a32"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actualTimeLabel" destination="UJz-Zh-Y8n" id="DGk-5g-nEe"/>
+                        <outlet property="baselineTextField" destination="4JP-Pf-e2X" id="nIr-PI-Ps2"/>
+                        <outlet property="modeController" destination="hRM-9U-8Cq" id="jFM-WN-9Wq"/>
+                        <outlet property="warpedTimeLabel" destination="Zch-q5-suT" id="a60-3o-GFw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
