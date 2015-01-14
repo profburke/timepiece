@@ -14,6 +14,7 @@
 		C9FA897E1A570FFD0015DB03 /* TimepieceFreezeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA897D1A570FFD0015DB03 /* TimepieceFreezeTests.swift */; };
 		C9FA89801A57103E0015DB03 /* TimepieceTravelDurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA897F1A57103E0015DB03 /* TimepieceTravelDurationTests.swift */; };
 		C9FA89821A57106C0015DB03 /* TimepieceTravelToDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA89811A57106C0015DB03 /* TimepieceTravelToDateTests.swift */; };
+		C9FA89B91A5744F90015DB03 /* TimepieceSequenceOfTimesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA89B81A5744F90015DB03 /* TimepieceSequenceOfTimesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		C9FA897D1A570FFD0015DB03 /* TimepieceFreezeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimepieceFreezeTests.swift; sourceTree = "<group>"; };
 		C9FA897F1A57103E0015DB03 /* TimepieceTravelDurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimepieceTravelDurationTests.swift; sourceTree = "<group>"; };
 		C9FA89811A57106C0015DB03 /* TimepieceTravelToDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimepieceTravelToDateTests.swift; sourceTree = "<group>"; };
+		C9FA89B81A5744F90015DB03 /* TimepieceSequenceOfTimesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimepieceSequenceOfTimesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				C9FA897D1A570FFD0015DB03 /* TimepieceFreezeTests.swift */,
 				C9FA897F1A57103E0015DB03 /* TimepieceTravelDurationTests.swift */,
 				C9FA89811A57106C0015DB03 /* TimepieceTravelToDateTests.swift */,
+				C9FA89B81A5744F90015DB03 /* TimepieceSequenceOfTimesTests.swift */,
 				C9FA893F1A5709D10015DB03 /* Supporting Files */,
 			);
 			path = TimepieceTests;
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FA89821A57106C0015DB03 /* TimepieceTravelToDateTests.swift in Sources */,
+				C9FA89B91A5744F90015DB03 /* TimepieceSequenceOfTimesTests.swift in Sources */,
 				C9FA897E1A570FFD0015DB03 /* TimepieceFreezeTests.swift in Sources */,
 				C9FA897C1A570F910015DB03 /* TimepieceTestCase.swift in Sources */,
 				C9FA89801A57103E0015DB03 /* TimepieceTravelDurationTests.swift in Sources */,
