@@ -64,13 +64,27 @@ class ViewController: UIViewController, UITextFieldDelegate
     actualTimeLabel.text = NSDate().description
     warpedTimeLabel.text = timepiece.now().description
     ticker = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "update", userInfo: nil, repeats: true)
+    
+    
+    let nc = NSNotificationCenter.defaultCenter()
+    nc.addObserver(self, selector: "timechange",
+      name: TimepieceSignificantTimeChangeNotification, object: nil)
+    
+    timepiece.scale = 3600
   }
   
   
+  func timechange()
+  {
+    println("BONG!")
+  }
   
   
   override func viewDidDisappear(animated: Bool)
   {
+    let nc = NSNotificationCenter.defaultCenter()
+    nc.removeObserver(self)
+    
     ticker.invalidate()
     super.viewDidDisappear(animated)
   }

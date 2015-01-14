@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9919E0C1A65FC1800C39D05 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9919E0B1A65FC1800C39D05 /* DateExtension.swift */; };
 		C9FA89351A5709D10015DB03 /* Timepiece.h in Headers */ = {isa = PBXBuildFile; fileRef = C9FA89341A5709D10015DB03 /* Timepiece.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9FA893B1A5709D10015DB03 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FA892F1A5709D10015DB03 /* Timepiece.framework */; };
 		C9FA894C1A5709FE0015DB03 /* Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA894B1A5709FE0015DB03 /* Timepiece.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9919E0B1A65FC1800C39D05 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		C9FA892F1A5709D10015DB03 /* Timepiece.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timepiece.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FA89331A5709D10015DB03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9FA89341A5709D10015DB03 /* Timepiece.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timepiece.h; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				C9FA89341A5709D10015DB03 /* Timepiece.h */,
 				C9FA894B1A5709FE0015DB03 /* Timepiece.swift */,
 				C9FA89321A5709D10015DB03 /* Supporting Files */,
+				C9919E0B1A65FC1800C39D05 /* DateExtension.swift */,
 			);
 			path = Timepiece;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9FA894C1A5709FE0015DB03 /* Timepiece.swift in Sources */,
+				C9919E0C1A65FC1800C39D05 /* DateExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +350,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Timepiece/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -363,6 +368,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Timepiece/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -382,6 +388,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = TimepieceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -397,6 +404,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = TimepieceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
